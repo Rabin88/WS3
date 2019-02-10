@@ -18,9 +18,21 @@ public class WordSig implements Comparable <WordSig> {
         return signature;
     }
 
-    public int compareTo(WordSig otherWords){
-        return this.signature.compareTo(otherWords.signature);
+    public int compareTo(WordSig o){
+        if(this.signature.length() > o.signature.length()) {
+            return 1;
+        }
+        if(this.signature.length() < o.signature.length()) {
+            return -1;
+        }
 
+        //if (this.signature.length()==other.signature.length())
+        return this.signature.compareTo(o.signature);
+    }
+
+    public String toString() {
+        return "Signature : " + signature + " Words: "+ words;
     }
 
 }
+
